@@ -178,3 +178,38 @@
     }
   }
 }
+
+.navigation_elements {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  position: relative;
+  padding-bottom: 10px;
+
+ 
+  .tab {
+    position: relative;
+    padding-bottom: 5px;
+    color: gray;
+    font-weight: normal;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    // Ligne noire centrée uniquement si actif
+    &.active {
+      color: black;
+      font-weight: bold;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 2px;
+        background-color: black;
+      }
+    }
+  }
+}

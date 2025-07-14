@@ -1,9 +1,9 @@
 <div class="product-card">
   <div class="images">
-    <img class="thumb" src="https://placehold.co/152x167" />
-    <img class="thumb" src="https://placehold.co/152x168" />
-    <img class="thumb" src="https://placehold.co/152x167" />
-    <img class="main-image" src="https://placehold.co/444x530" />
+    <img class="thumb" src="assets/images/T-shirt2.png" />
+    <img class="thumb" src="assets/images/T-shirt3.png" />
+    <img class="thumb" src="assets/images/T-shirt4.png" />
+    <img class="main-image" src="assets/images/T-shirt1.png" />
   </div>
 
   <div class="details">
@@ -48,3 +48,53 @@
     <div class="discount">-40%</div>
   </div>
 </div>
+
+<br><br><br><br>
+<div class="navigation_elements">
+  <div 
+    class="tab" 
+    [class.active]="selectedTab === 'details'" 
+    (click)="ChangeSelectedTab('details')">
+    Product Details
+  </div>
+
+  <div 
+    class="tab" 
+    [class.active]="selectedTab === 'reviews'" 
+    (click)="ChangeSelectedTab('reviews')">
+    Rating & Reviews
+  </div>
+
+  <div 
+    class="tab" 
+    [class.active]="selectedTab === 'faq'" 
+    (click)="ChangeSelectedTab('faq')">
+    FAQs
+  </div>
+</div>
+
+
+<div class="tab-content">
+  <div *ngIf="selectedTab === 'details'">
+    <h3>Product Details</h3>
+    <p>Here are the details of the product...</p>
+  </div>
+  <div *ngIf="selectedTab === 'reviews'">
+    <h3>Rating & Reviews</h3>
+    <p>Here are the reviews of the product...</p>
+  </div>
+  <div *ngIf="selectedTab === 'faq'">
+    <h3>FAQs</h3>
+    <p>Here are the frequently asked questions...</p>
+  </div>
+  </div>
+
+
+
+
+
+  
+
+
+
+  
