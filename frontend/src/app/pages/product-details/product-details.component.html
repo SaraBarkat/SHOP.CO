@@ -1,25 +1,31 @@
 <div class="product-card">
   <div class="images">
-    <img class="thumb" src="assets/images/T-shirt2.png" />
-    <img class="thumb" src="assets/images/T-shirt3.png" />
-    <img class="thumb" src="assets/images/T-shirt4.png" />
-    <img class="main-image" src="assets/images/T-shirt1.png" />
+    <img  *ngFor="let img of images; let i = index"
+      [src]="img"
+      [class.thumb]="i !== 0"
+      [class.main-image]="i === 0"/>
   </div>
 
   <div class="details">
-    <h1 class="title">One Life Graphic T-shirt</h1>
+    <h1 class="title">{{product_name}}</h1>
     <div class="rating">
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <div class="score">4.5/5</div>
+   
+     <div class="stars">
+  <span *ngFor="let star of [].constructor(product_score)">⭐</span>
+</div>
+
+
+      
+      <div class="score">{{product_score}}/5</div>
     </div>
 
     <div class="price-row">
-      <span class="price">$260</span>
-      <span class="old-price">$300</span>
+      <span class="price">${{new_price}}</span>
+      <span class="old-price">${{old_price}}</span>
     </div>
 
     <div class="description">
-      This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.
+      {{product_description}}
     </div>
 
     <div class="label">Select Colors</div>
@@ -48,53 +54,3 @@
     <div class="discount">-40%</div>
   </div>
 </div>
-
-<br><br><br><br>
-<div class="navigation_elements">
-  <div 
-    class="tab" 
-    [class.active]="selectedTab === 'details'" 
-    (click)="ChangeSelectedTab('details')">
-    Product Details
-  </div>
-
-  <div 
-    class="tab" 
-    [class.active]="selectedTab === 'reviews'" 
-    (click)="ChangeSelectedTab('reviews')">
-    Rating & Reviews
-  </div>
-
-  <div 
-    class="tab" 
-    [class.active]="selectedTab === 'faq'" 
-    (click)="ChangeSelectedTab('faq')">
-    FAQs
-  </div>
-</div>
-
-
-<div class="tab-content">
-  <div *ngIf="selectedTab === 'details'">
-    <h3>Product Details</h3>
-    <p>Here are the details of the product...</p>
-  </div>
-  <div *ngIf="selectedTab === 'reviews'">
-    <h3>Rating & Reviews</h3>
-    <p>Here are the reviews of the product...</p>
-  </div>
-  <div *ngIf="selectedTab === 'faq'">
-    <h3>FAQs</h3>
-    <p>Here are the frequently asked questions...</p>
-  </div>
-  </div>
-
-
-
-
-
-  
-
-
-
-  
